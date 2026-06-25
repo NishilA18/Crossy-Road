@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crossy Road - Web Game</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="ui">
+            <div class="score-display">
+                <h2>Distance: <span id="score">0</span></h2>
+                <h2>High Score: <span id="highScore">0</span></h2>
+            </div>
+            <button id="pauseBtn" class="btn">Pause</button>
+            <button id="restartBtn" class="btn">Restart</button>
+        </div>
+        
+        <canvas id="gameCanvas" width="800" height="600"></canvas>
+        
+        <div id="gameOver" class="modal hidden">
+            <div class="modal-content">
+                <h1>Game Over!</h1>
+                <p>Final Distance: <span id="finalScore">0</span></p>
+                <p>High Score: <span id="finalHighScore">0</span></p>
+                <button onclick="location.reload()">Play Again</button>
+            </div>
+        </div>
+        
+        <div id="pauseMenu" class="modal hidden">
+            <div class="modal-content">
+                <h1>Paused</h1>
+                <button onclick="game.resume()">Resume</button>
+                <button onclick="location.reload()">Restart</button>
+            </div>
+        </div>
+    </div>
+    
+    <script src="game.js"></script>
+</body>
+</html>
